@@ -1,0 +1,46 @@
+<article *ngIf="education" class="my-5 mx-4 text-center">
+  <div>
+    <img
+      *ngIf="education.institution?.logoUrl"
+      [alt]="education.institution!.name"
+      [src]="education.institution!.logoUrl"
+      class="m-3"
+    />
+    <p *ngIf="!education.institution?.logoUrl" class="m-3">
+      {{ education.institution?.name }}
+    </p>
+    <div
+      *ngIf="isLogged"
+      class="d-flex align-items-center justify-content-center"
+    >
+      <button (click)="edit()" class="material-symbols-outlined edit-btn m-2">
+        edit
+      </button>
+      <button
+        (click)="link()"
+        *ngIf="!education.institution"
+        class="material-symbols-outlined edit-btn m-2"
+      >
+        link
+      </button>
+      <button
+        (click)="linkOff()"
+        *ngIf="education.institution"
+        class="material-symbols-outlined edit-btn m-2"
+      >
+        link_off
+      </button>
+      <button
+        (click)="delete()"
+        class="material-symbols-outlined delete-btn m-2"
+      >
+        delete
+      </button>
+    </div>
+  </div>
+  <p class="my-3">
+    <span *ngIf="!education.completed" i18n>En curso - </span>{{ education.title }}
+    {{ " (" + education.period + ")" }}
+  </p>
+  <p>{{ education.description }}</p>
+</article>

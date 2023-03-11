@@ -1,0 +1,25 @@
+.edit-btn {
+  background-color: #7000ff;
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+  border: none;
+  border-radius: 25px;
+}
+
+.thumbnail {
+  max-width: 25vw;
+  max-height: 25vw;
+}
+
+@media (min-width: 768px) {
+  .flex-wrap-element {
+    margin: 2em;
+    flex-basis: 30em;
+    background-color: blue;
+  }
+
+  .thumbnail {
+    width: 100%;
+  }
+}

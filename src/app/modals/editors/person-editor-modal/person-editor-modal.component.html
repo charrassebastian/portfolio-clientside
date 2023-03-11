@@ -1,0 +1,57 @@
+<div [ngStyle]="{ display: 'block' }" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" i18n>Editar informacion de la persona</h5>
+        <button
+          (click)="close()"
+          aria-label="Close"
+          class="material-symbols-outlined close-btn"
+          data-bs-dismiss="modal"
+          type="button"
+        >
+          close
+        </button>
+      </div>
+      <form (ngSubmit)="onSubmit($event)" [formGroup]="form">
+        <div class="modal-body">
+          <label for="name" i18n>Nombre</label>
+          <input formControlName="name" id="name" type="text"/>
+          <label for="surname" i18n>Apellido</label>
+          <input formControlName="surname" id="surname" type="text"/>
+          <label for="title" i18n>Titulo</label>
+          <input formControlName="title" id="title" type="text"/>
+          <label for="description" i18n>Descripción</label>
+          <textarea
+            formControlName="description"
+            id="description"
+            type="text"
+          ></textarea>
+          <label for="email" i18n>Titulo</label>
+          <input formControlName="email" id="email" type="email"/>
+          <label for="githubUrl" i18n>URL de cuenta en github</label>
+          <input formControlName="githubUrl" id="githubUrl" type="text"/>
+          <label for="linkedinUrl" i18n>URL de cuenta en LinkedIn</label>
+          <input formControlName="linkedinUrl" id="linkedinUrl" type="text"/>
+          <label for="heroImageUrl" i18n>URL de foto de perfil</label>
+          <input formControlName="heroImageUrl" id="heroImageUrl" type="text"/>
+          <label for="profilePictureUrl" i18n
+          >URL de foto de perfil en miniatura</label
+          >
+          <input
+            formControlName="profilePictureUrl"
+            id="profilePictureUrl"
+            type="text"
+          />
+          <label for="catchPhrase" i18n>Frase para atraer clientes</label>
+          <input formControlName="catchPhrase" id="catchPhrase" type="text"/>
+        </div>
+        <div class="modal-footer">
+          <button class="material-symbols-outlined save-btn" type="submit">
+            save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

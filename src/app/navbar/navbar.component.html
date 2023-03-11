@@ -1,0 +1,40 @@
+<header class="navbar-header sticky-top">
+  <nav class="navbar p-3 dark-background-blur">
+    <div class="nav-item bg-transparent d-flex justify-content-center align-items-center">
+      <a
+        class="navbar-brand bg-transparent"
+        href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
+      >
+        <img
+          i18n-alt
+          alt="Ir a Argentina Programa"
+          src="assets/logo argentina programa.png"
+        />
+      </a>
+    </div>
+    <div class="nav-item bg-transparent">
+      <a [href]="person?.githubUrl" class="navbar-brand bg-transparent"
+      ><img i18n-alt alt="Ir a Github" src="assets/github-mark-white.png"
+      /></a>
+      <a [href]="person?.linkedinUrl" class="navbar-brand bg-transparent"
+      ><img i18n-alt alt="Ir a LinkedIn" src="assets/In-White-34-Ôö¼┬½.png"
+      /></a>
+      <a
+        *ngIf="!isLogged"
+        class="btn btn-outline-light border-radius-100 bg-transparent"
+        role="button"
+        routerLink="/login"
+        i18n
+      >Login</a
+      >
+      <button
+        (click)="logOut()"
+        *ngIf="isLogged"
+        class="btn btn-outline-light border-radius-100 bg-transparent"
+        i18n
+      >
+        Logout
+      </button>
+    </div>
+  </nav>
+</header>

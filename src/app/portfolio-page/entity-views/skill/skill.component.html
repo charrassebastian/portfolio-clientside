@@ -1,0 +1,26 @@
+<div class="container my-4">
+  <div class="row align-items-center">
+    <div class="col d-flex align-items-center">
+      <p class="m-0">{{ skill.name }}</p>
+    </div>
+    <div class="progress col">
+      <div
+        [style]="'width: ' + skill.percentage + '%'"
+        class="progress-bar bg-purple"
+        role="progressbar"
+      ></div>
+    </div>
+    <div
+      *ngIf="isLogged"
+      class="col d-flex align-items-center justify-content-center"
+    >
+      <button (click)="edit()" class="material-symbols-outlined edit-btn m-2">edit</button>
+      <button
+        (click)="delete()"
+        class="material-symbols-outlined delete-btn m-2"
+      >
+        delete
+      </button>
+    </div>
+  </div>
+</div>

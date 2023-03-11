@@ -1,0 +1,8 @@
+<div class="page-container p-0">
+  <app-hero *ngIf="person" [person]="person"></app-hero>
+  <app-categories-container
+    *ngIf="person"
+    [person]="person"
+  ></app-categories-container>
+  <app-legal-notice></app-legal-notice>
+</div>

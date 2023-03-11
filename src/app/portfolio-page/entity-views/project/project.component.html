@@ -1,0 +1,31 @@
+<article class="my-5 mx-4 text-center">
+  <h3 class="fs-5 m-3">
+    <span *ngIf="!project.completed" i18n>Actualmente - </span
+    >{{ project.title + " - (" + project.period + ")" }}
+  </h3>
+  <div
+    *ngIf="isLogged"
+    class="d-flex align-items-center justify-content-center"
+  >
+    <button (click)="edit()" class="material-symbols-outlined edit-btn m-2">
+      edit
+    </button>
+    <button (click)="delete()" class="material-symbols-outlined delete-btn m-2">
+      delete
+    </button>
+  </div>
+  <p class="my-3">{{ project.description }}</p>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-auto">
+        <a
+          [href]="project.url"
+          class="btn-purple rounded-pill d-inline-block text-center text-nowrap"
+          role="button"
+          i18n
+        >Ver proyecto</a
+        >
+      </div>
+    </div>
+  </div>
+</article>
