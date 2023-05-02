@@ -1,0 +1,18 @@
+<div
+  class="bg-img text-white d-flex align-items-center justify-content-center full-screen"
+>
+  <form
+    [formGroup]="form"
+    class="dark-background-blur"
+    (ngSubmit)="onSubmit($event)"
+  >
+    <h1 class="m-auto">Iniciar Sesión</h1>
+    <label for="usuario" class="my-3">Usuario</label>
+    <input type="text" id="usuario" formControlName="user" />
+    <label for="password" class="my-3">Contraseña</label>
+    <input type="password" id="password" formControlName="password" />
+    <button type="submit" class="btn-submit rounded-pill d-inline-block mt-4" id="submitButton">
+      Ingresar
+    </button>
+  </form>
+</div>
