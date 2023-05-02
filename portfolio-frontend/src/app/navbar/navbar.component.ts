@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Person } from '../entities/person';
 import { LoginService } from '../services/login/login.service';
 import { PersonService } from '../services/person/person.service';
+import { SubdomainService } from '../services/subdomain/subdomain.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,10 +11,13 @@ import { PersonService } from '../services/person/person.service';
 })
 export class NavbarComponent {
   private _person?: Person;
+  readonly subdomain;
   constructor(
     private loginService: LoginService,
-    private personService: PersonService
+    private personService: PersonService,
+    private subdomainService: SubdomainService
   ) {
+    this.subdomain = this.subdomainService.subdomain;
     this.fetchPerson();
     this.personService.change.subscribe(() => this.fetchPerson());
   }

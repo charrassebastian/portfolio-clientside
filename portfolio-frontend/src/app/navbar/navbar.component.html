@@ -1,23 +1,14 @@
 <header class="navbar-header sticky-top">
   <nav class="navbar p-3 dark-background-blur">
-    <!--<div class="nav-item bg-transparent">
-      <a
-        href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
-        class="navbar-brand bg-transparent"
-      >
-        <img
-          src="assets/logo argentina programa.png"
-          alt="Go to Argentina Programa"
-        />
-      </a>
-    </div>-->
     <div class="nav-item bg-transparent">
       <a [href]="person?.githubUrl" class="navbar-brand bg-transparent"
         ><img src="assets/github-mark-white.png" alt="Go to Github"
       /></a>
-      <a [href]="person?.linkedinUrl" class="navbar-brand bg-transparent"
+      <a *ngIf="this.subdomain !== 'portfolio'" [href]="person?.linkedinUrl" class="navbar-brand bg-transparent"
         ><img src="assets/In-White-34-Ôö¼┬½.png" alt="Go to LinkedIn"
       /></a>
+    </div>
+    <div class="nav-item bg-transparent">
       <a
         *ngIf="!isLogged"
         role="button"

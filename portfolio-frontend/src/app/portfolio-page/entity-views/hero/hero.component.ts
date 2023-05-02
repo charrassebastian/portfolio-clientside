@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Person } from 'src/app/entities/person';
+import { SubdomainService } from 'src/app/services/subdomain/subdomain.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,7 +9,10 @@ import { Person } from 'src/app/entities/person';
 })
 export class HeroComponent {
   private _person!: Person;
-
+  readonly subdomain;
+  constructor(private subdomainService: SubdomainService){
+    this.subdomain = this.subdomainService.subdomain;
+  }
   public get person(): Person {
     return this._person;
   }

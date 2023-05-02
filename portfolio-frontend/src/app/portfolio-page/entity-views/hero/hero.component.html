@@ -14,7 +14,7 @@
       width="100%"
     />
   </div>
-  <div class="d-flex justify-content-center my-5 contactarme-container">
+  <div *ngIf="this.subdomain !== 'portfolio'" class="d-flex justify-content-center my-5 contactarme-container">
     <a
       [href]="'mailto:' + person.email"
       role="button"
