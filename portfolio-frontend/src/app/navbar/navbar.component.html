@@ -1,22 +1,22 @@
 <header class="navbar-header sticky-top">
   <nav class="navbar p-3 dark-background-blur">
-    <div class="nav-item bg-transparent">
+    <!--<div class="nav-item bg-transparent">
       <a
         href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa"
         class="navbar-brand bg-transparent"
       >
         <img
           src="assets/logo argentina programa.png"
-          alt="Ir a Argentina Programa"
+          alt="Go to Argentina Programa"
         />
       </a>
-    </div>
+    </div>-->
     <div class="nav-item bg-transparent">
       <a [href]="person?.githubUrl" class="navbar-brand bg-transparent"
-        ><img src="assets/github-mark-white.png" alt="Ir a Github"
+        ><img src="assets/github-mark-white.png" alt="Go to Github"
       /></a>
       <a [href]="person?.linkedinUrl" class="navbar-brand bg-transparent"
-        ><img src="assets/In-White-34-Ôö¼┬½.png" alt="Ir a LinkedIn"
+        ><img src="assets/In-White-34-Ôö¼┬½.png" alt="Go to LinkedIn"
       /></a>
       <a
         *ngIf="!isLogged"

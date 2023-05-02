@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Editar informacion de la persona</h5>
+        <h5 class="modal-title">Edit the person's information</h5>
         <button
           type="button"
           class="material-symbols-outlined close-btn"
@@ -15,35 +15,35 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
         <div class="modal-body">
-          <label for="name">Nombre</label>
+          <label for="name">Name</label>
           <input type="text" id="name" formControlName="name" />
-          <label for="surname">Apellido</label>
+          <label for="surname">Surname</label>
           <input type="text" id="surname" formControlName="surname" />
-          <label for="title">Titulo</label>
+          <label for="title">Title</label>
           <input type="text" id="title" formControlName="title" />
-          <label for="description">Descripción</label>
+          <label for="description">Description</label>
           <textarea
             type="text"
             id="description"
             formControlName="description"
           ></textarea>
-          <label for="email">Titulo</label>
+          <label for="email">Title</label>
           <input type="email" id="email" formControlName="email" />
-          <label for="githubUrl">URL de cuenta en github</label>
+          <label for="githubUrl">URL of the GitHub account</label>
           <input type="text" id="githubUrl" formControlName="githubUrl" />
-          <label for="linkedinUrl">URL de cuenta en LinkedIn</label>
+          <label for="linkedinUrl">URL of the LinkedIn account</label>
           <input type="text" id="linkedinUrl" formControlName="linkedinUrl" />
-          <label for="heroImageUrl">URL de foto de perfil</label>
+          <label for="heroImageUrl">URL of the profile photo</label>
           <input type="text" id="heroImageUrl" formControlName="heroImageUrl" />
           <label for="profilePictureUrl"
-            >URL de foto de perfil en miniatura</label
+            >URL of the profile photo's thumbnail</label
           >
           <input
             type="text"
             id="profilePictureUrl"
             formControlName="profilePictureUrl"
           />
-          <label for="catchPhrase">Frase para atraer clientes</label>
+          <label for="catchPhrase">Phrase for getting customers</label>
           <input type="text" id="catchPhrase" formControlName="catchPhrase" />
         </div>
         <div class="modal-footer">

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiRouteService {
-  private _route: string = 'https://apiyoprogramo.sebastiancharras.com/api/';
+  private _route: string = 'https://api.sebastiancharras.com/api/';
 
   constructor() {}
 

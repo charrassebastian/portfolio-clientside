@@ -3,7 +3,7 @@
     <img
       *ngIf="workExperience.institution?.logoUrl"
       [src]="workExperience.institution!.logoUrl"
-      [alt]="'logo de ' + workExperience.institution!.name"
+      [alt]="'logo of ' + workExperience.institution!.name"
       class="mx-4"
     />
     <div
@@ -36,10 +36,10 @@
     </div>
   </div>
   <h3 class="my-3 fs-5">
-    <span *ngIf="!workExperience.completed">Actualmente - </span
+    <span *ngIf="!workExperience.completed">Currently - </span
     >{{ workExperience.title + " (" + workExperience.period + ")"
     }}<span *ngIf="workExperience.institution">
-      - en {{ workExperience.institution.name }}</span
+      - at {{ workExperience.institution.name }}</span
     >
   </h3>
   <p>

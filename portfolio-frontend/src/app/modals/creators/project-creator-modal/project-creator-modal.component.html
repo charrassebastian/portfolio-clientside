@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Agregar proyecto</h5>
+        <h5 class="modal-title">Add project</h5>
         <button
           type="button"
           class="material-symbols-outlined close-btn"
@@ -15,11 +15,11 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
         <div class="modal-body">
-          <label for="title">Titulo del proyecto</label>
+          <label for="title">Title of the project</label>
           <input type="text" id="title" formControlName="title" />
-          <label for="period">Periodo de colaboración (ej. 2020 - 2021)</label>
+          <label for="period">Time period (ej. 2020 - 2021)</label>
           <input type="text" id="period" formControlName="period" />
-          <label for="completed">¿Ya ha sido completado?</label>
+          <label for="completed">Is it completed?</label>
           <input type="checkbox" id="completed" formControlName="completed" />
           <label for="description">Descripción</label>
           <textarea

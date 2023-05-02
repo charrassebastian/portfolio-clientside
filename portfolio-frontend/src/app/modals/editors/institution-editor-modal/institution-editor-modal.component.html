@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Editar institución</h5>
+        <h5 class="modal-title">Edit institution</h5>
         <button
           type="button"
           class="material-symbols-outlined close-btn"
@@ -15,9 +15,9 @@
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
         <div class="modal-body">
-          <label for="name">Nombre de la institución</label>
+          <label for="name">Name of the institution</label>
           <input type="text" id="name" formControlName="name" />
-          <label for="logoUrl">URL del logo</label>
+          <label for="logoUrl">URL of the logo</label>
           <input type="text" id="logoUrl" formControlName="logoUrl" />
         </div>
         <div class="modal-footer">
