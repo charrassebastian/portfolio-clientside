@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portfolio-clientside
+spec:
+  selector:
+    matchLabels:
+      app: portfolio-clientside
+  template:
+    metadata:
+      labels:
+        app: portfolio-clientside
+    spec:
+      containers:
+      - name: portfolio-clientside
+        image: sebastiancharras/portfolio-clientside
+        ports:
+        - containerPort: 80
