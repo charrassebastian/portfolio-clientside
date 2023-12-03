@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ApiRouteService {
-  private _route: string = 'http://localhost:8087/api/';
+  private _route: string = 'https://portfolio-api.sebastiancharras.tech/api/';
 
   constructor() {}
 
