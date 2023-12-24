@@ -2,7 +2,7 @@
     <div class="btn-container">
         <button type="submit" class="btn-submit rounded-pill d-inline-block mt-4" id="submitButton"
             (click)="onToggle()">
-            {{ shouldShowLicenses ? "Ocultar licencias" : "Ver licencias" }}
+            {{ shouldShowLicenses ? "Hide licenses" : "Show licenses" }}
         </button>
     </div>
     <app-licenses *ngIf="shouldShowLicenses"></app-licenses>
