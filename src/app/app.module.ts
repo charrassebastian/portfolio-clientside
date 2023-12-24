@@ -37,6 +37,8 @@ import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import { ErrorDeleteModalComponent } from './modals/error-delete-modal/error-delete-modal.component';
 import { WorkExperienceLinkModalComponent } from './modals/linkers/work-experience-link-modal/work-experience-link-modal.component';
 import { EducationLinkModalComponent } from './modals/linkers/education-link-modal/education-link-modal.component';
+import { LicensesComponent } from './licenses/licenses.component';
+import { LicensesSectionComponent } from './licenses-section/licenses-section.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +76,8 @@ import { EducationLinkModalComponent } from './modals/linkers/education-link-mod
     ErrorDeleteModalComponent,
     WorkExperienceLinkModalComponent,
     EducationLinkModalComponent,
+    LicensesComponent,
+    LicensesSectionComponent,
   ],
   imports: [
     BrowserModule,
