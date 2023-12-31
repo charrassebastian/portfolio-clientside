@@ -10,10 +10,11 @@ export class HeaderService {
 
   public get headers(): HttpHeaders {
     let httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const bearer = 'Bearer ' + this.loginService.token;
     if (this.loginService.isLogged) {
       httpHeaders = httpHeaders.append(
         'Authorization',
-        'Bearer ' + this.loginService.token
+        bearer
       );
     }
     return httpHeaders;

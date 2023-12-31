@@ -1,5 +1,5 @@
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +39,7 @@ import { WorkExperienceLinkModalComponent } from './modals/linkers/work-experien
 import { EducationLinkModalComponent } from './modals/linkers/education-link-modal/education-link-modal.component';
 import { LicensesComponent } from './licenses/licenses.component';
 import { LicensesSectionComponent } from './licenses-section/licenses-section.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,12 @@ import { LicensesSectionComponent } from './licenses-section/licenses-section.co
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     provideClientHydration(),

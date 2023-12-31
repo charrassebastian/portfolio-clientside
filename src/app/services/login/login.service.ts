@@ -2,29 +2,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID, afterNextRender } from '@angular/core';
 import { User } from 'src/app/entities/user';
 import { ApiRouteService } from '../api-route/api-route.service';
-import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
-  private platformId = Inject(PLATFORM_ID);
-
   constructor(private http: HttpClient, private apiRoute: ApiRouteService) { }
 
   public get isLogged(): boolean {
-    let authToken = false;
+    let isAuthTokenStored = false;
     try {
-      authToken = localStorage.getItem('auth_token') !== null;
+      const authToken = localStorage.getItem('auth_token');
+      isAuthTokenStored = authToken !== null;
     } catch { }
-    return authToken;
+    return isAuthTokenStored;
   }
 
   public logIn(user: User): void {
     try {
       this.http.post(this.apiRoute.route + 'auth/signin', user, { headers: this.httpHeaders }).subscribe((res: any) => {
-        localStorage.setItem('auth_token', res.token);
+        const token = res.token;
+        localStorage.setItem('auth_token', token);
       });
     } catch { }
   }
@@ -40,6 +39,6 @@ export class LoginService {
     try {
       authToken = localStorage.getItem('auth_token');
     } catch { }
-    return null;
+    return authToken;
   }
 }
